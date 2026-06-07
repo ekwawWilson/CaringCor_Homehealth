@@ -1,0 +1,16 @@
+name: caringcor-health
+services:
+  - name: web
+    build_command: npm run build
+    run_command: npm start
+    environment_slug: node-js
+    instance_size_slug: basic-xxs
+    instance_count: 1
+    http_port: 3000
+    routes:
+      - path: /
+    envs:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_APP_URL
+        value: https://caringcorhomehealthcare-v3rcr.ondigitalocean.app
