@@ -160,10 +160,6 @@ function HeroSlider() {
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               {/* Tag pill */}
-              <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-primary-200 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wide mb-6">
-                <Heart className="w-3.5 h-3.5 text-accent-400" />
-                {slide.tag}
-              </span>
 
               {/* Headline */}
               <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] font-heading font-bold text-white leading-[1.1] mb-6">
@@ -202,7 +198,7 @@ export default function HomepageClient() {
       {/* ─── STATS RIBBON — photo cards overlapping slider & about ─── */}
       <section className="relative z-20 -mt-16 pb-0">
         <div className="container-pad">
-          <div className="grid grid-cols-2 md:grid-cols-4 rounded-2xl overflow-hidden shadow-2xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 overflow-hidden shadow-2xl">
 
             {/* ── Card 0: Logo / brand panel — white + subtle dot pattern ── */}
             <motion.div
@@ -277,7 +273,6 @@ export default function HomepageClient() {
                 {i < 2 && <div className="absolute right-0 top-4 bottom-4 w-px bg-white/20 z-10 hidden md:block" />}
                 {/* Content */}
                 <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-                  <s.icon className="w-6 h-6 text-accent-400 mb-2" />
                   <div className="text-4xl md:text-5xl font-heading font-bold text-white leading-none mb-1.5">
                     {s.value}
                   </div>
@@ -397,15 +392,12 @@ export default function HomepageClient() {
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.12 }}
-                className="group relative rounded-2xl overflow-hidden shadow-lg"
+                className="group relative overflow-hidden shadow-lg"
                 style={{ minHeight: "380px" }}
               >
                 <img src={item.img} alt={item.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/40 to-transparent" />
                 <div className="absolute inset-0 flex flex-col justify-end p-7">
-                  <span className="inline-flex items-center gap-1.5 bg-accent-500 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide mb-3 self-start">
-                    <item.icon className="w-3 h-3" /> {item.tag}
-                  </span>
                   <h3 className="font-heading font-bold text-white text-xl mb-2">{item.title}</h3>
                   <p className="text-primary-200 text-sm leading-relaxed">{item.desc}</p>
                 </div>
